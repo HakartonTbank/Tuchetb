@@ -4,13 +4,14 @@ import static android.app.PendingIntent.getActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity  {
 
     Button button_enter;
 
@@ -35,7 +36,8 @@ public class LoginActivity extends AppCompatActivity {
 
      */
     public void onClick_activity_change_button(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Log.d("my_logs", "onClick");
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
     }
 }
