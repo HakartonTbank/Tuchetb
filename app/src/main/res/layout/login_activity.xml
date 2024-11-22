@@ -7,7 +7,7 @@
 
 
     <EditText
-        android:id="@+id/plain_text_input"
+        android:id="@+id/plain_text_input3"
         android:layout_width="280sp"
         android:layout_height="50sp"
         android:layout_marginTop="16dp"
@@ -17,13 +17,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plain_text_input2" />
+        app:layout_constraintTop_toBottomOf="@+id/plain_text_input4" />
 
     <EditText
-        android:id="@+id/plain_text_input2"
+        android:id="@+id/plain_text_input4"
         android:layout_width="280sp"
         android:layout_height="50sp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="116dp"
         android:hint="Введите пароль"
         android:inputType="text"
         android:textSize="20sp"
