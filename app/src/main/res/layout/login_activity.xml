@@ -6,15 +6,43 @@
     android:layout_height="match_parent">
 
 
+    <EditText
+        android:id="@+id/plain_text_input"
+        android:layout_width="280sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="16dp"
+        android:hint="Введите логин"
+        android:inputType="text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plain_text_input2" />
+
+    <EditText
+        android:id="@+id/plain_text_input2"
+        android:layout_width="280sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="188dp"
+        android:hint="Введите пароль"
+        android:inputType="text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_enter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="дальше (зарегался)"
-        android:onClick="toMain"
+        android:layout_marginBottom="72dp"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        tools:ignore="MissingConstraints"
+        android:onClick="onClick_activity_change_button"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
