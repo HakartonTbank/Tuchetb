@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "243359801349",
+    "project_id": "tuchet-f8e70",
+    "storage_bucket": "tuchet-f8e70.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243359801349:android:7d87be9c765b930daf3c6c",
+        "android_client_info": {
+          "package_name": "com.example.tuchet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtSxSVW134mZ8IJRqIRhGdT3dsD1zfSzM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
