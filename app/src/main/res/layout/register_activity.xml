@@ -6,7 +6,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_apply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="toMain"
@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.792" />
 
     <EditText
-        android:id="@+id/plain_text_input3"
+        android:id="@+id/plain_text_login"
         android:layout_width="280sp"
         android:layout_height="50sp"
         android:layout_marginTop="16dp"
@@ -29,10 +29,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plain_text_input4" />
+        app:layout_constraintTop_toBottomOf="@+id/plain_text_pass" />
 
     <EditText
-        android:id="@+id/plain_text_input4"
+        android:id="@+id/plain_text_pass"
         android:layout_width="280sp"
         android:layout_height="50sp"
         android:layout_marginTop="116dp"
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
-        android:id="@+id/plain_text_input5"
+        android:id="@+id/plain_text_name"
         android:layout_width="280sp"
         android:layout_height="50sp"
         android:layout_marginTop="12dp"
@@ -55,6 +55,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plain_text_input3" />
+        app:layout_constraintTop_toBottomOf="@+id/plain_text_login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
