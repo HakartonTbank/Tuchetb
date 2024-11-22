@@ -38,11 +38,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
-        android:text="Button"
+        android:text="дальше (залогинился)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        android:onClick="onClick_activity_change_button"/>
+        android:onClick="toMain"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
