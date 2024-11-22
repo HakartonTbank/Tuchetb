@@ -6,12 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LoginActivity extends AppCompatActivity  {
+public class StartActivity extends AppCompatActivity  {
 
 
 
@@ -19,7 +18,7 @@ public class LoginActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.login_activity);
+        setContentView(R.layout.start_activity);
 
 
     }
@@ -32,9 +31,14 @@ public class LoginActivity extends AppCompatActivity  {
         fragmentTransaction.commit();
 
      */
-    public void onClick_activity_change_button(View view) {
-        Log.d("my_logs", "onClick");
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+    public void toLogin(View view) {
+
+        Intent intent = new Intent(StartActivity.this, LoginActivity.class);
+        startActivity(intent);
+    }
+    public void toRegister(View view) {
+
+        Intent intent = new Intent(StartActivity.this, RegisterActivity.class);
         startActivity(intent);
     }
 }
