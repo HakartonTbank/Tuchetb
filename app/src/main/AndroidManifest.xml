@@ -25,6 +25,14 @@
             android:label="MainActivity"
             >
         </activity>
+        <activity android:name=".LoginActivity"
+            android:label="LoginActivity"
+            >
+        </activity>
+        <activity android:name=".RegisterActivity"
+            android:label="RegisterActivity"
+            >
+        </activity>
     </application>
 
 </manifest>

@@ -32,7 +32,6 @@ public class StartActivity extends AppCompatActivity  {
 
      */
     public void toLogin(View view) {
-
         Intent intent = new Intent(StartActivity.this, LoginActivity.class);
         startActivity(intent);
     }
