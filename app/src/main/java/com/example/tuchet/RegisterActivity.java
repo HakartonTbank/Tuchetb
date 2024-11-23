@@ -8,7 +8,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -35,13 +44,24 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "Заполните все поля.",Toast.LENGTH_LONG).show();
         }else {
             //тут всякая дичь с бд
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(login.getText().toString(), pass.getText().toString())
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()){
+                                HashMap<String, String> userInfo = new HashMap<>();
+                                userInfo.put("email", login.getText().toString());
+                                userInfo.put("username", name.getText().toString());
+                                FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(userInfo);
 
+                                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                startActivity(intent);
 
+                            }
+                        }
+                    });
 
-
-            //это переход это не трогай
-            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-            startActivity(intent);
         }
 
     }
