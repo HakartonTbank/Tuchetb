@@ -1,39 +1,27 @@
 package com.example.tuchet;
 
-import android.content.Intent;
-import android.app.Activity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Adapter;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.Toast;
 import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.text.format.DateUtils;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.TimePicker;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
-
-public class EnterData extends AppCompatActivity {
+public class EnterSpendData extends AppCompatActivity {
 
     EditText Money;
 
@@ -53,7 +41,7 @@ public class EnterData extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.enter_data_activity);
+        setContentView(R.layout.spend_data_activity);
         Money = findViewById(R.id.enterMoney);
         currentDateTime = findViewById(R.id.currentDateTime);
         setInitialDateTime();
@@ -67,7 +55,7 @@ public class EnterData extends AppCompatActivity {
 
         spinner.setSelection(2);
 
-        spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
@@ -79,7 +67,7 @@ public class EnterData extends AppCompatActivity {
                         medicine = false;
                         optionalExpenses = false;
                         transport = false;
-                            break;
+                        break;
                     case (1): houseAndCS = true;
                         food = false;
                         medicine = false;
@@ -120,7 +108,7 @@ public class EnterData extends AppCompatActivity {
     }
 
     public void setDate(View v) {
-        new DatePickerDialog(EnterData.this, d,
+        new DatePickerDialog(EnterSpendData.this, d,
                 dateAndTime.get(Calendar.YEAR),
                 dateAndTime.get(Calendar.MONTH),
                 dateAndTime.get(Calendar.DAY_OF_MONTH))
@@ -148,7 +136,7 @@ public class EnterData extends AppCompatActivity {
     };
 
     public void enterDateData(Date date, Integer summ, Boolean replanishment, Boolean food,
-                         Boolean houseAndCS, Boolean medicine, Boolean optionalExpenses, Boolean transport) {
+                              Boolean houseAndCS, Boolean medicine, Boolean optionalExpenses, Boolean transport) {
 
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
@@ -169,6 +157,5 @@ public class EnterData extends AppCompatActivity {
                 .setValue(dateInfo);
 
     }
+
 }
-
-

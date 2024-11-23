@@ -33,7 +33,7 @@
             android:label="RegisterActivity"
             >
         </activity>
-        <activity android:name=".EnterData"
+        <activity android:name=".EnterIncomeData"
             android:label="EnterData"
 
             >

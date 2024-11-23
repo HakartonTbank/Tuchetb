@@ -22,24 +22,25 @@ public class FragmentHome extends Fragment {
         //return super.onCreateView(inflater, container, savedInstanceState);
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         Button incomeButton = v.findViewById(R.id.income_button);
+        Button spendButton = v.findViewById(R.id.spend_button);
 
         incomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("my_logs", "click");
-                Intent intent = new Intent(getContext(), EnterData.class);
+                Intent intent = new Intent(getContext(), EnterIncomeData.class);
                 startActivity(intent);
             }
         });
 
+        spendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), EnterSpendData.class);
+                startActivity(intent);
+            }
+        });
 
         return v;
-
-
     }
-
-
-
-
 
 }
