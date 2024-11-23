@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.tuchet" />
+                  <option name="mobileSdkAppId" value="1:243359801349:android:7d87be9c765b930daf3c6c" />
+                  <option name="projectId" value="tuchet-f8e70" />
+                  <option name="projectNumber" value="243359801349" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
