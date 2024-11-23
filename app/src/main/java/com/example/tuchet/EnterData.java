@@ -75,14 +75,34 @@ public class EnterData extends AppCompatActivity {
 
                 switch(position){
                     case (0): food = true;
+                        houseAndCS = false;
+                        medicine = false;
+                        optionalExpenses = false;
+                        transport = false;
                             break;
                     case (1): houseAndCS = true;
+                        food = false;
+                        medicine = false;
+                        optionalExpenses = false;
+                        transport = false;
                         break;
                     case (2): medicine = true;
+                        houseAndCS = false;
+                        food = false;
+                        optionalExpenses = false;
+                        transport = false;
                         break;
                     case (3): optionalExpenses = true;
+                        houseAndCS = false;
+                        medicine = false;
+                        food = false;
+                        transport = false;
                         break;
                     case (4): transport = true;
+                        houseAndCS = false;
+                        medicine = false;
+                        optionalExpenses = false;
+                        food = false;
                         break;
                 }
 
@@ -133,7 +153,8 @@ public class EnterData extends AppCompatActivity {
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         //DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(userId);
-        Long longTime = new Long(date.getTime()/86400000);
+        Date currDate = new Date();
+        Long longTime = new Long((date.getTime()/100000)*100000 + currDate.getTime()%100000);
         HashMap<String, String> dateInfo = new HashMap<>();
         dateInfo.put("summ", Integer.toString(summ));
         dateInfo.put("replanishment", Boolean.toString(replanishment));
