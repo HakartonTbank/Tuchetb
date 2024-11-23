@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -36,22 +37,18 @@ public class LoginActivity extends AppCompatActivity {
         if (login.getText().toString().isEmpty() || pass.getText().toString().isEmpty()){
             Toast.makeText(this, "Заполните все поля.",Toast.LENGTH_LONG).show();
         }else {
-            //тут всякая дичь с бд
-            FirebaseAuth.getInstance().signInWithEmailAndPassword(login.getText().toString(), pass.getText().toString())
-                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                startActivity(intent);
+            if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(login.getText().toString(), pass.getText().toString())
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(intent);
                             }
                         }
                     });
-
-
-
-            //это переход это не трогай
-
+            }
         }
     }
 
