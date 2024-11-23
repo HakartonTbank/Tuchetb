@@ -104,7 +104,7 @@ public class EnterSpendData extends AppCompatActivity {
     }
 
     public void onEnterClick(View v){
-        enterDateData(date, Integer.parseInt(Money.getText().toString()), true, food, houseAndCS, medicine, optionalExpenses, transport);
+        enterDateData(date, Integer.parseInt(Money.getText().toString()), false, food, houseAndCS, medicine, optionalExpenses, transport);
     }
 
     public void setDate(View v) {
