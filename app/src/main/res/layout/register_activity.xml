@@ -19,42 +19,43 @@
         app:layout_constraintVertical_bias="0.792" />
 
     <EditText
-        android:id="@+id/plain_text_login"
-        android:layout_width="280sp"
-        android:layout_height="50sp"
-        android:layout_marginTop="16dp"
-        android:hint="Введите логин"
-        android:inputType="text"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plain_text_pass" />
-
-    <EditText
-        android:id="@+id/plain_text_pass"
-        android:layout_width="280sp"
-        android:layout_height="50sp"
-        android:layout_marginTop="116dp"
-        android:hint="Введите пароль"
-        android:inputType="text"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <EditText
         android:id="@+id/plain_text_name"
         android:layout_width="280sp"
         android:layout_height="50sp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="100dp"
         android:hint="ну тут типа фио будет чи хз"
         android:inputType="text"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/plain_text_login"
+        android:layout_width="280sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="28dp"
+        android:hint="Введите логин"
+        android:inputType="text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plain_text_name" />
+
+    <EditText
+        android:id="@+id/plain_text_pass"
+        android:layout_width="280sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="24dp"
+        android:hint="Введите пароль"
+        android:inputType="text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plain_text_login" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
