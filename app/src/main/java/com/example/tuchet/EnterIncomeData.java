@@ -26,16 +26,16 @@ public class EnterIncomeData extends AppCompatActivity {
 
     EditText Money;
 
-    String[] types = {"Food", "HouseAndCS", "Medicine", "OptionalExpenses", "Transport"};
+    String[] types = {"Наличные", "Безналичные", "Стипендия", "Заработная плата", "Другое"};
 
     TextView currentDateTime;
     Calendar dateAndTime=Calendar.getInstance();
 
-    Boolean food = false;
-    Boolean houseAndCS = false;
-    Boolean medicine = false;
-    Boolean optionalExpenses = false;
-    Boolean transport = false;
+    Boolean cash = false;
+    Boolean nonCash = false;
+    Boolean scholarship = false;
+    Boolean wage = false;
+    Boolean other = false;
     Date date;
 
     @Override
@@ -63,35 +63,35 @@ public class EnterIncomeData extends AppCompatActivity {
                 //Toast.makeText(getBaseContext(), "Position =" + position, Toast.LENGTH_SHORT).show();
 
                 switch(position){
-                    case (0): food = true;
-                        houseAndCS = false;
-                        medicine = false;
-                        optionalExpenses = false;
-                        transport = false;
+                    case (0): cash = true;
+                        nonCash = false;
+                        scholarship = false;
+                        wage = false;
+                        other = false;
                             break;
-                    case (1): houseAndCS = true;
-                        food = false;
-                        medicine = false;
-                        optionalExpenses = false;
-                        transport = false;
+                    case (1): nonCash = true;
+                        cash = false;
+                        scholarship = false;
+                        wage = false;
+                        other = false;
                         break;
-                    case (2): medicine = true;
-                        houseAndCS = false;
-                        food = false;
-                        optionalExpenses = false;
-                        transport = false;
+                    case (2): scholarship = true;
+                        nonCash = false;
+                        cash = false;
+                        wage = false;
+                        other = false;
                         break;
-                    case (3): optionalExpenses = true;
-                        houseAndCS = false;
-                        medicine = false;
-                        food = false;
-                        transport = false;
+                    case (3): wage = true;
+                        nonCash = false;
+                        scholarship = false;
+                        wage = false;
+                        other = false;
                         break;
-                    case (4): transport = true;
-                        houseAndCS = false;
-                        medicine = false;
-                        optionalExpenses = false;
-                        food = false;
+                    case (4): other = true;
+                        nonCash = false;
+                        scholarship = false;
+                        wage = false;
+                        cash = false;
                         break;
                 }
 
@@ -105,7 +105,7 @@ public class EnterIncomeData extends AppCompatActivity {
     }
 
     public void onEnterClick(View v){
-        enterDateData(date, Integer.parseInt(Money.getText().toString()), true, food, houseAndCS, medicine, optionalExpenses, transport);
+        enterDateData(date, Integer.parseInt(Money.getText().toString()), true, cash, nonCash, scholarship, wage, other);
     }
 
     public void setDate(View v) {
@@ -136,8 +136,8 @@ public class EnterIncomeData extends AppCompatActivity {
         }
     };
 
-    public void enterDateData(Date date, Integer summ, Boolean replanishment, Boolean food,
-                         Boolean houseAndCS, Boolean medicine, Boolean optionalExpenses, Boolean transport) {
+    public void enterDateData(Date date, Integer summ, Boolean replanishment, Boolean cash,
+                         Boolean nonCash, Boolean scholarship, Boolean wage, Boolean other) {
 
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
@@ -147,11 +147,11 @@ public class EnterIncomeData extends AppCompatActivity {
         HashMap<String, String> dateInfo = new HashMap<>();
         dateInfo.put("summ", Integer.toString(summ));
         dateInfo.put("replanishment", Boolean.toString(replanishment));
-        dateInfo.put("food", Boolean.toString(food));
-        dateInfo.put("houseAndCS", Boolean.toString(houseAndCS));
-        dateInfo.put("medicine", Boolean.toString(medicine));
-        dateInfo.put("optionalExpenses", Boolean.toString(optionalExpenses));
-        dateInfo.put("transport", Boolean.toString(transport));
+        dateInfo.put("cash", Boolean.toString(cash));
+        dateInfo.put("nonCash", Boolean.toString(nonCash));
+        dateInfo.put("scholarship", Boolean.toString(scholarship));
+        dateInfo.put("wage", Boolean.toString(wage));
+        dateInfo.put("other", Boolean.toString(other));
 
         //dateInfo.put("date", Long.toString(longTime));
         FirebaseDatabase.getInstance().getReference().child("Users").child(userId).child("data").child(Long.toString(longTime))

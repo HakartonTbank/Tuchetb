@@ -25,7 +25,7 @@ public class EnterSpendData extends AppCompatActivity {
 
     EditText Money;
 
-    String[] types = {"Food", "HouseAndCS", "Medicine", "OptionalExpenses", "Transport"};
+    String[] types = {"Еда", "Оплата налогов и ЖКХ", "Медицина", "Опциональные траты", "Транспорт"};
 
     TextView currentDateTime;
     Calendar dateAndTime=Calendar.getInstance();
