@@ -25,9 +25,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class EnterData extends AppCompatActivity {
 
@@ -37,6 +41,13 @@ public class EnterData extends AppCompatActivity {
 
     TextView currentDateTime;
     Calendar dateAndTime=Calendar.getInstance();
+
+    Boolean food = false;
+    Boolean houseAndCS = false;
+    Boolean medicine = false;
+    Boolean optionalExpenses = false;
+    Boolean transport = false;
+    Date date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +71,21 @@ public class EnterData extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
-                Toast.makeText(getBaseContext(), "Position =" + position,
-                        Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getBaseContext(), "Position =" + position, Toast.LENGTH_SHORT).show();
+
+                switch(position){
+                    case (0): food = true;
+                            break;
+                    case (1): houseAndCS = true;
+                        break;
+                    case (2): medicine = true;
+                        break;
+                    case (3): optionalExpenses = true;
+                        break;
+                    case (4): transport = true;
+                        break;
+                }
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> arg0){
@@ -69,6 +93,10 @@ public class EnterData extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void onEnterClick(View v){
+        enterDateData(date, Integer.parseInt(Money.getText().toString()), true, food, houseAndCS, medicine, optionalExpenses, transport);
     }
 
     public void setDate(View v) {
@@ -86,6 +114,7 @@ public class EnterData extends AppCompatActivity {
         currentDateTime.setText(DateUtils.formatDateTime(this,
                 dateAndTime.getTimeInMillis(),
                 DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR));
+        date = dateAndTime.getTime();
     }
 
     // установка обработчика выбора даты
@@ -97,6 +126,28 @@ public class EnterData extends AppCompatActivity {
             setInitialDateTime();
         }
     };
+
+    public void enterDateData(Date date, Integer summ, Boolean replanishment, Boolean food,
+                         Boolean houseAndCS, Boolean medicine, Boolean optionalExpenses, Boolean transport) {
+
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        //DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(userId);
+        Long longTime = new Long(date.getTime()/86400000);
+        HashMap<String, String> dateInfo = new HashMap<>();
+        dateInfo.put("summ", Integer.toString(summ));
+        dateInfo.put("replanishment", Boolean.toString(replanishment));
+        dateInfo.put("food", Boolean.toString(food));
+        dateInfo.put("houseAndCS", Boolean.toString(houseAndCS));
+        dateInfo.put("medicine", Boolean.toString(medicine));
+        dateInfo.put("optionalExpenses", Boolean.toString(optionalExpenses));
+        dateInfo.put("transport", Boolean.toString(transport));
+
+        //dateInfo.put("date", Long.toString(longTime));
+        FirebaseDatabase.getInstance().getReference().child("Users").child(userId).child("data").child(Long.toString(longTime))
+                .setValue(dateInfo);
+
+    }
 }
 
 

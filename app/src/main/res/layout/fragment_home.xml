@@ -43,7 +43,7 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:text="Категории расходов:"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +76,7 @@
         android:id="@+id/button"
         android:layout_width="265dp"
         android:layout_height="89dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="Обязательные"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +87,7 @@
         android:id="@+id/button2"
         android:layout_width="265dp"
         android:layout_height="89dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="104dp"
         android:text="Необязательные"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,10 +98,22 @@
         android:id="@+id/button3"
         android:layout_width="265dp"
         android:layout_height="89dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="192dp"
         android:text="Накопления"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <Button
+        android:id="@+id/income_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="enter_income"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

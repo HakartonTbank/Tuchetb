@@ -53,6 +53,17 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/enterMoney" /> <!-- Привязка к нижней части EditText -->
+        app:layout_constraintTop_toBottomOf="@id/enterMoney" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ввод"
+        android:onClick="onEnterClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateButton" /> <!-- Привязка к нижней части EditText -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
