@@ -36,6 +36,7 @@ public class EnterSpendData extends AppCompatActivity {
     Boolean optionalExpenses = false;
     Boolean transport = false;
     Date date;
+    UserData userData = new UserData();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -152,7 +153,23 @@ public class EnterSpendData extends AppCompatActivity {
         dateInfo.put("optionalExpenses", Boolean.toString(optionalExpenses));
         dateInfo.put("transport", Boolean.toString(transport));
 
-        //dateInfo.put("date", Long.toString(longTime));
+        DataOperation dat = new DataOperation();
+        dat.unixDate = longTime;
+        if(food){
+            dat.food += summ;
+        }else if(houseAndCS){
+            dat.houseAndCS += summ;
+        }else if(medicine){
+            dat.medicine += summ;
+        }else if(optionalExpenses){
+            dat.optionalExpenses += summ;
+        }else if(transport){
+            dat.transport += summ;
+        }
+
+        userData.addData(dat);
+        userData.increaseCnt();
+
         FirebaseDatabase.getInstance().getReference().child("Users").child(userId).child("data").child(Long.toString(longTime))
                 .setValue(dateInfo);
 

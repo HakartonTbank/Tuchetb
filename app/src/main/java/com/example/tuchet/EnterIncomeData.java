@@ -37,6 +37,7 @@ public class EnterIncomeData extends AppCompatActivity {
     Boolean wage = false;
     Boolean other = false;
     Date date;
+    UserData userData = new UserData();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,7 +154,23 @@ public class EnterIncomeData extends AppCompatActivity {
         dateInfo.put("wage", Boolean.toString(wage));
         dateInfo.put("other", Boolean.toString(other));
 
-        //dateInfo.put("date", Long.toString(longTime));
+        DataOperation dat = new DataOperation();
+        dat.unixDate = longTime;
+        if(cash){
+            dat.cash += summ;
+        }else if(nonCash){
+            dat.nonCash += summ;
+        }else if(scholarship){
+            dat.scholarship += summ;
+        }else if(wage){
+            dat.wage += summ;
+        }else if(other){
+            dat.other += summ;
+        }
+
+        userData.addData(dat);
+        userData.increaseCnt();
+
         FirebaseDatabase.getInstance().getReference().child("Users").child(userId).child("data").child(Long.toString(longTime))
                 .setValue(dateInfo);
 
