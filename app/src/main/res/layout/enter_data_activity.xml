@@ -11,34 +11,32 @@
         android:id="@+id/currentDateTime"
         android:layout_width="175dp"
         android:layout_height="39dp"
-        android:layout_marginTop="292dp"
 
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/dateButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.899" />
+        app:layout_constraintTop_toBottomOf="@+id/enterMoney"
+        app:layout_constraintVertical_bias="0.506" />
 
     <Button
         android:id="@+id/dateButton"
         android:layout_width="287dp"
         android:layout_height="70dp"
-        android:layout_marginTop="520dp"
+        android:layout_marginTop="112dp"
+        android:backgroundTint="@color/Tyellow"
         android:onClick="setDate"
         android:text="Изменить дату"
-        android:backgroundTint="@color/Tyellow"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/enterMoney" />
 
     <EditText
         android:id="@+id/enterMoney"
         android:layout_width="322dp"
         android:layout_height="89dp"
-        android:layout_marginTop="332dp"
         android:hint="Введите деньги"
         android:inputType="text"
 
@@ -46,16 +44,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="410dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="156dp"
-        android:minHeight="48dp"
+        android:layout_width="350sp"
+        android:layout_height="80sp"
+        android:layout_marginTop="168sp"
+        android:minHeight="48sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

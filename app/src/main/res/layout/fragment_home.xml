@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/current_balance"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/text_income"
+        android:id="@+id/textView5"
         android:layout_width="302dp"
         android:layout_height="43dp"
         android:layout_marginStart="40dp"
@@ -49,10 +49,10 @@
         android:text="Доходы:"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/current_balance" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
-        android:id="@+id/text_spend"
+        android:id="@+id/textView6"
         android:layout_width="303dp"
         android:layout_height="35dp"
         android:layout_marginStart="44dp"
@@ -61,7 +61,7 @@
         android:text="Расходы:"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_income" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
         android:id="@+id/income_button"
