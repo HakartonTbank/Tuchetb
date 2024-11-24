@@ -33,7 +33,7 @@ public class EnterIncomeData extends AppCompatActivity {
 
     Boolean cash = false;
     Boolean nonCash = false;
-    Boolean scholarship = false;
+    Boolean scholarship = true;
     Boolean wage = false;
     Boolean other = false;
     Date date;
