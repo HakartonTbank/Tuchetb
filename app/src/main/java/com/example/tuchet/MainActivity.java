@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 replaceFragment(new FragmentHome());
             }
+
         });
 
         profileIV.setOnClickListener(new View.OnClickListener() {

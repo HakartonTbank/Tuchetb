@@ -58,8 +58,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                                 startActivity(intent);
 
-                            }else {
-                                //Toast.makeText(this, "Минимальная длинна пароля 6 символов.",Toast.LENGTH_LONG).show();
                             }
                         }
                     });
