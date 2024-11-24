@@ -1,16 +1,19 @@
 package com.example.tuchet;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.app.DatePickerDialog;
 import android.text.format.DateUtils;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class EnterIncomeData extends AppCompatActivity {
+
 
     EditText Money;
 
@@ -39,6 +43,7 @@ public class EnterIncomeData extends AppCompatActivity {
     Date date;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +52,8 @@ public class EnterIncomeData extends AppCompatActivity {
         Money = findViewById(R.id.enterMoney);
         currentDateTime = findViewById(R.id.currentDateTime);
         setInitialDateTime();
+
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, types);
@@ -106,6 +113,7 @@ public class EnterIncomeData extends AppCompatActivity {
     }
 
     public void onEnterClick(View v){
+        Log.d("my_logs", "enter_button_income");
         enterDateData(date, Integer.parseInt(Money.getText().toString()), true, cash, nonCash, scholarship, wage, other);
     }
 
@@ -154,6 +162,8 @@ public class EnterIncomeData extends AppCompatActivity {
         dateInfo.put("wage", Boolean.toString(wage));
         dateInfo.put("other", Boolean.toString(other));
 
+        Log.d("my_logs","hash_map done");
+
         DataOperation dat = new DataOperation();
         dat.unixDate = longTime;
         if(cash){
@@ -169,11 +179,14 @@ public class EnterIncomeData extends AppCompatActivity {
         }
 
         UserData.dataList.add(dat);
-        UserData.increaseCnt();
+        UserData.cnt += 1;
         UserData.income += summ;
+        Log.d("my_logs", "enterDate?");
 
         FirebaseDatabase.getInstance().getReference().child("Users").child(userId).child("data").child(Long.toString(longTime))
                 .setValue(dateInfo);
+
+        Toast.makeText(this, "Данные загружены.", Toast.LENGTH_LONG).show();
 
     }
 }

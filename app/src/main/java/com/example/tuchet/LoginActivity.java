@@ -48,6 +48,8 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         }
                     });
+            }else {
+                Toast.makeText(this, "Данные не корректны.",Toast.LENGTH_LONG).show();
             }
         }
     }

@@ -61,7 +61,7 @@
         android:id="@+id/button4"
         android:layout_width="287dp"
         android:layout_height="70dp"
-
+        android:onClick="onEnterClick"
         android:text="Ввод"
         android:textSize="24sp"
         android:backgroundTint="@color/Tyellow"

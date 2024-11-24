@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class StartActivity extends AppCompatActivity  {
 
-    public UserData userData = new UserData();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

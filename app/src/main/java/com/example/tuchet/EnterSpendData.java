@@ -11,6 +11,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,7 +38,7 @@ public class EnterSpendData extends AppCompatActivity {
     Boolean optionalExpenses = false;
     Boolean transport = false;
     Date date;
-    Button enter;
+
 
 
     @Override
@@ -49,12 +50,9 @@ public class EnterSpendData extends AppCompatActivity {
         currentDateTime = findViewById(R.id.currentDateTime);
         setInitialDateTime();
 
-        enter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                enterDateData(date, Integer.parseInt(Money.getText().toString()), false, food, houseAndCS, medicine, optionalExpenses, transport);
-            }
-        });
+
+
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, types);
@@ -177,11 +175,13 @@ public class EnterSpendData extends AppCompatActivity {
         }
 
         UserData.dataList.add(dat);
-        UserData.increaseCnt();
+        UserData.cnt += 1;
         UserData.spend += summ;
 
         FirebaseDatabase.getInstance().getReference().child("Users").child(userId).child("data").child(Long.toString(longTime))
                 .setValue(dateInfo);
+
+        Toast.makeText(this, "Данные загружены.", Toast.LENGTH_LONG).show();
 
     }
 
