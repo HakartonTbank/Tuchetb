@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="*здесь будет ваш денге*"
+        android:text="0"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,22 +41,24 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="302dp"
+        android:layout_height="43dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
-        android:text="Доходs:"
+        android:gravity="left"
+        android:text="Доходы:"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
-        android:text="Расходs:"
+        android:layout_width="303dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:gravity="left"
+        android:text="Расходы:"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
