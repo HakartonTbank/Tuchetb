@@ -16,28 +16,16 @@
         tools:ignore="MissingConstraints">
 
 
-        <Button
-            android:id="@+id/first_date_picker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Выберите первую\nдату" />
-
-        <Button
-            android:id="@+id/second_date_picker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Выберите вторую\nдату" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/text_dates"
         android:layout_width="wrap_content"
         android:layout_height="16sp"
+        android:layout_marginTop="164dp"
         android:text="Расходы с ... по ..."
-        android:layout_marginTop="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -45,33 +33,71 @@
         android:id="@+id/enter_date_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:text="Показать"
+        android:backgroundTint="@color/Tyellow"
+        android:onClick="setDate"
+        android:textColor="@color/black"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="17sp"
         app:layout_constraintTop_toBottomOf="@+id/text_dates" />
 
     <TextView
         android:id="@+id/textSpend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="56dp"
         android:text=""
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="17sp"
-        android:layout_marginHorizontal="20sp"
         app:layout_constraintTop_toBottomOf="@+id/enter_date_button" />
 
     <TextView
         android:id="@+id/textIncome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="52dp"
         android:text=""
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="17sp"
-        android:layout_marginHorizontal="20sp"
         app:layout_constraintTop_toBottomOf="@+id/textSpend" />
+
+    <Button
+        android:id="@+id/first_date_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/Tyellow"
+        android:onClick="setDate"
+        android:text="Выберите первую\nдату"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/second_date_picker"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/second_date_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/Tyellow"
+        android:onClick="setDate"
+        android:text="Выберите вторую\nдату"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

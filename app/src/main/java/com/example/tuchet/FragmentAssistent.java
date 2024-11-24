@@ -110,9 +110,9 @@ public class FragmentAssistent extends Fragment {
                             ((double) sum.transport / totalSpend) * 100) + "%\nЗдоровье - " + String.format("%.3f",((double) sum.medicine / totalSpend) * 100) + "%\nОплата налогов и счетов - " + String.format("%.3f",
                             ((double) sum.houseAndCS / totalSpend) * 100) + "%\nОпциональные траты - " + String.format("%.3f",((double) sum.optionalExpenses / totalSpend) * 100) +"%");
 
-                    textIncome.setText("Доходы:\nНаличные - " + String.format("%.3f",((double) sum.cash / totalSpend) * 100) + "%\nБезналичные - " + String.format("%.3f",
-                            ((double) sum.nonCash / totalSpend) * 100) + "%\nСтипендия - " + String.format("%.3f",((double) sum.scholarship / totalSpend) * 100) + "%\nЗароботная плата - " + String.format("%.3f",
-                            ((double) sum.wage / totalSpend) * 100) + "%\nДругое - " + String.format("%.3f",((double) sum.other / totalSpend) * 100) + "%");
+                    textIncome.setText("Доходы:\nНаличные - " + String.format("%.3f",((double) sum.cash / totalIncome) * 100) + "%\nБезналичные - " + String.format("%.3f",
+                            ((double) sum.nonCash / totalIncome) * 100) + "%\nСтипендия - " + String.format("%.3f",((double) sum.scholarship / totalIncome) * 100) + "%\nЗароботная плата - " + String.format("%.3f",
+                            ((double) sum.wage / totalIncome) * 100) + "%\nДругое - " + String.format("%.3f",((double) sum.other / totalIncome) * 100) + "%");
 
                     textSpend.setVisibility(View.VISIBLE);
                     textIncome.setVisibility(View.VISIBLE);

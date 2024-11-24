@@ -39,7 +39,7 @@
         android:layout_width="280sp"
         android:layout_height="50sp"
         android:layout_marginTop="28dp"
-        android:hint="Введите логин"
+        android:hint="Введите вашу почту"
         android:inputType="text"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

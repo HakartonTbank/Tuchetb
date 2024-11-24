@@ -6,24 +6,12 @@
     android:layout_height="match_parent">
 
 
-    <Button
-        android:id="@+id/button_settings"
-        android:layout_width="70sp"
-        android:layout_height="70sp"
-        android:layout_marginTop="36dp"
-        android:textSize="5sp"
-        android:backgroundTint="@color/Tyellow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:text="Name"
+        android:text="Здравствуйте!"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
