@@ -36,7 +36,7 @@ public class EnterSpendData extends AppCompatActivity {
     Boolean optionalExpenses = false;
     Boolean transport = false;
     Date date;
-    UserData userData = new UserData();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,8 +167,9 @@ public class EnterSpendData extends AppCompatActivity {
             dat.transport += summ;
         }
 
-        userData.addData(dat);
-        userData.increaseCnt();
+        UserData.dataList.add(dat);
+        UserData.increaseCnt();
+        UserData.spend += summ;
 
         FirebaseDatabase.getInstance().getReference().child("Users").child(userId).child("data").child(Long.toString(longTime))
                 .setValue(dateInfo);

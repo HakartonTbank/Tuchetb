@@ -24,6 +24,8 @@ public class FragmentHome extends Fragment {
         Button incomeButton = v.findViewById(R.id.income_button);
         Button spendButton = v.findViewById(R.id.spend_button);
 
+
+
         incomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

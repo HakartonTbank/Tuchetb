@@ -37,7 +37,7 @@ public class EnterIncomeData extends AppCompatActivity {
     Boolean wage = false;
     Boolean other = false;
     Date date;
-    UserData userData = new UserData();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,8 +168,9 @@ public class EnterIncomeData extends AppCompatActivity {
             dat.other += summ;
         }
 
-        userData.addData(dat);
-        userData.increaseCnt();
+        UserData.dataList.add(dat);
+        UserData.increaseCnt();
+        UserData.income += summ;
 
         FirebaseDatabase.getInstance().getReference().child("Users").child(userId).child("data").child(Long.toString(longTime))
                 .setValue(dateInfo);
